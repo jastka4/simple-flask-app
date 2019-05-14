@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "6e17b424-4e72-4ec7-939c-2870a56cf247",
+		"name": "Chess",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create_Game",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"game_h_s\",\n    \"players\": [\n        \"Hou Yifan\",\n        \"Samwel Ter-Sahakian\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/createGame",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"createGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Game",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "End_Game",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/endGame?game=match_s_g",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"endGame"
+					],
+					"query": [
+						{
+							"key": "game",
+							"value": "match_s_g"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Move",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/move?game=test&player=Ola",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"move"
+					],
+					"query": [
+						{
+							"key": "game",
+							"value": "test"
+						},
+						{
+							"key": "player",
+							"value": "Ola"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add_Move",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"game\": \"test\",\n    \"move\": {\n        \"id\": 1,\n        \"piece\": 2,\n        \"player\": \"Justyna\",\n        \"x\": 8,\n        \"y\": 7\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/move",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"move"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "65e0baa8-2b08-4925-9715-73940c82e168",
+			"key": "Content-Type",
+			"value": "application/json",
+			"type": "string"
+		}
+	]
+}
